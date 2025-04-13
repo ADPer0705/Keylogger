@@ -6,6 +6,10 @@ This document outlines critical security considerations for developers, research
 
 This project is developed strictly for cybersecurity education and defensive research. It demonstrates techniques that have security implications when misused.
 
+## Repository Status Update
+
+This project now includes basic functionality for educational purposes. Non-functional components remain in the codebase for controlled research and future development.
+
 ## Secure Development Practices
 
 ### Development Environment Security

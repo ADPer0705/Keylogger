@@ -2,6 +2,10 @@
 
 This document outlines the development trajectory for the Keylogger Research Platform, categorized by milestone phases.
 
+## Repository Status Update
+
+The project has been updated to include basic functionality while retaining non-functional components for future research and development. This roadmap reflects both the current functional state and planned enhancements.
+
 ## Milestone 1: Core Engine Refinement (Current)
 
 - [x] Implement basic keyboard hook mechanism

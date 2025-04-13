@@ -3,8 +3,19 @@
   "WorkspaceRootPath": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D1E2F3A4-B5C6-7890-4567-89012DEF3456}|src\\Keylogger.Persistence\\Keylogger.Persistence.csproj|s:\\proj4\\dotnetproj\\keyloggerlabs\\src\\keylogger.persistence\\startup\\startupinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E2F3A4-B5C6-7890-4567-89012DEF3456}|src\\Keylogger.Persistence\\Keylogger.Persistence.csproj|solutionrelative:src\\keylogger.persistence\\startup\\startupinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}|Keylogger\\Keylogger.csproj|s:\\proj4\\dotnetproj\\keyloggerlabs\\keylogger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}|Keylogger\\Keylogger.csproj|solutionrelative:keylogger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1D2E3F4-A5B6-7890-3456-78901CDEF234}|src\\Keylogger.CLI\\Keylogger.CLI.csproj|s:\\proj4\\dotnetproj\\keyloggerlabs\\src\\keylogger.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1D2E3F4-A5B6-7890-3456-78901CDEF234}|src\\Keylogger.CLI\\Keylogger.CLI.csproj|solutionrelative:src\\keylogger.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anayp\\AppData\\Local\\Temp\\tmp5200.tmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +25,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -23,12 +38,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StartupInstaller.cs",
+              "DocumentMoniker": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\src\\Keylogger.Persistence\\Startup\\StartupInstaller.cs",
+              "RelativeDocumentMoniker": "src\\Keylogger.Persistence\\Startup\\StartupInstaller.cs",
+              "ToolTip": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\src\\Keylogger.Persistence\\Startup\\StartupInstaller.cs",
+              "RelativeToolTip": "src\\Keylogger.Persistence\\Startup\\StartupInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T21:52:18.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tmp5200.tmp.cs",
+              "DocumentMoniker": "C:\\Users\\anayp\\AppData\\Local\\Temp\\tmp5200.tmp.cs",
+              "ToolTip": "C:\\Users\\anayp\\AppData\\Local\\Temp\\tmp5200.tmp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T21:39:57.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\src\\Keylogger.CLI\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Keylogger.CLI\\Program.cs",
+              "ToolTip": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\src\\Keylogger.CLI\\Program.cs",
+              "RelativeToolTip": "src\\Keylogger.CLI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T21:36:44.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\Keylogger\\Program.cs",
               "RelativeDocumentMoniker": "Keylogger\\Program.cs",
               "ToolTip": "S:\\proj4\\dotnetproj\\KeyloggerLabs\\Keylogger\\Program.cs",
               "RelativeToolTip": "Keylogger\\Program.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAASwEMAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAAcwMsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T10:33:14.389Z",
               "EditorCaption": ""

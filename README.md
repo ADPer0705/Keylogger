@@ -8,6 +8,10 @@
 
 This project implements a keylogging system in C# for **educational and security research purposes only**. It serves as a platform for studying endpoint monitoring techniques, user input tracking, and defensive countermeasures.
 
+## Repository Status Update
+
+This repository was initially non-functional and contained incomplete implementations. It has since been updated to include basic functionality for educational and research purposes. Non-functional components remain in the codebase for future development and study.
+
 ## 🛠️ Key Features
 
 - **Input Monitoring Engine**: Keyboard state monitoring through Windows API hooks
